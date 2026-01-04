@@ -1,0 +1,487 @@
+:root{
+  --bg:#f6f4f1;
+  --card:#ffffff;
+  --text:#1f1f1f;
+  --muted:#6b6b6b;
+  --line:#e6e1db;
+  --brand:#2f2a25;
+  --accent:#6b4f3a;
+  --danger:#b42318;
+  --radius:16px;
+  --shadow: 0 8px 22px rgba(0,0,0,.06);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a{color:inherit; text-decoration:none}
+.container{max-width:1100px; margin:0 auto; padding:0 16px}
+
+header{
+  position:sticky; top:0; z-index:20;
+  background: rgba(246,244,241,.92);
+  backdrop-filter: blur(6px);
+  border-bottom:1px solid var(--line);
+}
+.navbar{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 0;
+  gap:14px;
+}
+.brand{
+  display:flex; align-items:center; gap:10px;
+  font-weight:800; letter-spacing:.10em;
+  white-space:nowrap;
+}
+.logo{
+  width:34px; height:34px; border-radius:10px;
+  background: linear-gradient(135deg, #ffffff, var(--brand));
+  border:1px solid rgba(0,0,0,.08);
+  box-shadow: 0 8px 22px rgba(0,0,0,.06);
+}
+.navlinks{display:flex; gap:14px; align-items:center; flex-wrap:wrap; justify-content:flex-end}
+.navlinks a{font-size:14px; color: var(--muted)}
+.navlinks a:hover{color: var(--text)}
+.badge{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-width:18px; height:18px; padding:0 6px;
+  border-radius:999px; background: var(--accent); color:#fff;
+  font-size:12px; margin-left:6px;
+}
+
+.btn{
+  border:1px solid var(--line);
+  background: var(--card);
+  padding:10px 12px;
+  border-radius:12px;
+  cursor:pointer;
+  font-size:14px;
+}
+.btn:hover{box-shadow: var(--shadow)}
+.btn.primary{
+  background: var(--brand);
+  border-color: var(--brand);
+  color:#fff;
+}
+.btn.ghost{background:transparent}
+.btn.danger{
+  border-color: rgba(180,35,24,.25);
+  color: var(--danger);
+  background: #fff;
+}
+
+main{padding:22px 0 40px}
+
+.hero{
+  background: var(--card);
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+  display:grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap:0;
+}
+.hero .left{padding:28px}
+.hero h1{margin:0 0 10px; font-size:28px; letter-spacing:.04em}
+.hero p{margin:0; color: var(--muted); line-height:1.7}
+.hero .right{
+  position:relative;
+  color:#fff;
+  display:flex; flex-direction:column; justify-content:flex-end;
+  padding:18px;
+  min-height:240px;
+}
+.hero .overlay{
+  position:absolute; inset:0;
+  background: linear-gradient(135deg, rgba(47,42,37,.55), rgba(107,79,58,.42));
+  pointer-events:none;
+}
+.carousel{
+  position:absolute; inset:0;
+  display:flex;
+  transition: transform .5s ease;
+}
+.carousel img{
+  width:100%; height:100%;
+  object-fit:cover;
+  flex:0 0 100%;
+}
+.hero .right .text{
+  position:relative;
+  z-index:2;
+}
+.hero .kicker{font-size:12px; opacity:.9; letter-spacing:.18em}
+.hero .big{font-size:20px; font-weight:800; margin-top:10px; line-height:1.4}
+.dots{position:relative; z-index:2; display:flex; gap:6px; margin-top:12px}
+.dot{width:8px; height:8px; border-radius:99px; background:rgba(255,255,255,.45); border:1px solid rgba(255,255,255,.35); cursor:pointer}
+.dot.active{background:#fff}
+
+.section-title{
+  margin:22px 0 12px;
+  font-size:16px; letter-spacing:.12em; color: var(--muted);
+}
+
+.chips{display:flex; gap:10px; flex-wrap:wrap}
+.chip{
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background: var(--card);
+  font-size:13px;
+  cursor:pointer;
+  color: var(--muted);
+}
+.chip.active{border-color: var(--brand); color: var(--brand); font-weight:600}
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:14px;
+}
+.card{
+  background: var(--card);
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+.card .thumb{
+  height:150px;
+  background: #eee;
+  display:flex; align-items:center; justify-content:center;
+}
+.card .thumb img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  margin-bottom: 10px; 
+}
+.card .content{padding:12px}
+.card .name{font-weight:800; font-size:14px; line-height:1.4}
+.card .meta{margin-top:6px; display:flex; align-items:center; justify-content:space-between; color: var(--muted); font-size:13px}
+.card .actions{padding:0 12px 14px; display:flex; gap:10px}
+.card .actions .btn{flex:1}
+
+.two-col{
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap:16px;
+}
+.panel{
+  background: var(--card);
+  border:1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding:16px;
+}
+
+.breadcrumb{color: var(--muted); font-size:13px; margin:6px 0 10px}
+.price{font-size:20px; font-weight:900}
+.muted{color: var(--muted)}
+.row{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+.field{display:flex; flex-direction:column; gap:6px; margin:10px 0}
+label{font-size:13px; color: var(--muted)}
+input, select, textarea{
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:10px 12px;
+  font-size:14px;
+  background:#fff;
+}
+textarea{min-height:84px; resize:vertical}
+
+.qty{
+  display:flex; align-items:center; gap:10px;
+}
+.qty button{
+  width:34px; height:34px;
+  border-radius:10px;
+  border:1px solid var(--line);
+  background:#fff;
+  cursor:pointer;
+}
+.qty input{width:70px; text-align:center}
+
+.table{width:100%; border-collapse:collapse}
+.table th,.table td{
+  text-align:left;
+  padding:10px 8px;
+  border-bottom:1px solid var(--line);
+  font-size:14px;
+}
+.table th{color: var(--muted); font-weight:700}
+.table td .small{font-size:12px; color: var(--muted)}
+.right-align{text-align:right}
+
+.notice{
+  border:1px dashed rgba(107,79,58,.45);
+  background: rgba(107,79,58,.06);
+  border-radius: 14px;
+  padding:12px;
+  color: var(--muted);
+  line-height:1.7;
+  font-size:13px;
+}
+
+footer{
+  padding:18px 0;
+  border-top:1px solid var(--line);
+  color: var(--muted);
+  font-size:13px;
+}
+
+/* Modal */
+.modal-backdrop{
+  position:fixed; inset:0;
+  background:rgba(0,0,0,.35);
+  display:none;
+  align-items:center; justify-content:center;
+  padding:16px;
+  z-index:60;
+}
+.modal{
+  width:min(560px, 100%);
+  background:#fff;
+  border-radius:18px;
+  border:1px solid var(--line);
+  box-shadow: 0 18px 50px rgba(0,0,0,.22);
+  overflow:hidden;
+}
+.modal header{
+  position:static;
+  background:#fff;
+  border-bottom:1px solid var(--line);
+}
+.modal .head{
+  padding:14px 16px;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:10px;
+}
+.modal .body{padding:14px 16px}
+.modal .foot{padding:14px 16px; border-top:1px solid var(--line); display:flex; gap:10px; justify-content:flex-end}
+
+@media (max-width: 980px){
+  .grid{grid-template-columns: repeat(2, 1fr);}
+  .hero{grid-template-columns: 1fr;}
+  .two-col{grid-template-columns: 1fr;}
+  .navlinks{gap:10px}
+}
+
+@media (max-width: 520px){
+  .grid{grid-template-columns: 1fr;}
+  .hero .left{padding:18px}
+  .hero h1{font-size:22px}
+  .navbar{flex-direction:column; align-items:flex-start}
+  .navlinks{justify-content:flex-start}
+}
+
+.hero.hero-full{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  height: 60vh;        /* 滿版高度 */
+  min-height: 320px;
+  max-height: 650px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.hero.hero-full .carousel{
+  position: absolute;
+  inset: 0;
+  display: flex;
+}
+
+/* 圖片撐滿 */
+.hero.hero-full .carousel img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.slogan{
+  font-size: 14px;
+  letter-spacing: .12em;
+  color: #8a857f;
+  margin-bottom: 14px;
+}
+.card .thumb img{
+  height: 180px;
+  object-fit: cover;
+}
+#mainImg{
+  height: 420px;
+  object-fit: contain;
+  background:#fff;
+}
+/* 商品頁縮圖 */
+.thumbs{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+}
+
+.thumbs img{
+  width:72px;
+  height:72px;
+  object-fit:cover;
+  border-radius:8px;
+  cursor:pointer;
+  border:2px solid transparent;
+}
+
+.thumbs img.active{
+  border-color:#6b4f3a;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;  
+  width: auto;
+  display: block;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo img {
+  height: 40px;    
+  width: auto;
+  display: block;
+}
+
+.site-name {
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+}
+.custom-box {
+  margin-top: 20px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fafafa;
+}
+
+.custom-box h3 {
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.field {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.field span {
+  display: block;
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+
+.hint {
+  font-size: 12px;
+  color: #777;
+}
+/* ===== Team / About Us (卡片版) ===== */
+.team {
+  padding: 22px 0;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 14px;
+}
+
+.team-card {
+  background: #fff;
+  border: 1px solid var(--line, #e7e2dc);
+  border-radius: 18px;
+  padding: 16px 16px 18px;
+  box-shadow: 0 10px 26px rgba(0,0,0,.06);
+}
+
+.team-photo {
+  width: 120px;        /* 圓形大小 */
+  height: 120px;
+  object-fit: cover;  /* 保持不變形 */
+  border-radius: 50%; /* ✅ 關鍵 */
+  display: block;
+  margin: 0 auto;     /* 置中 */
+  background: #eee;
+}
+
+.team-name {
+  margin: 12px 0 6px;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: .02em;
+}
+
+.team-role {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 12px;
+}
+
+.team-text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.85;
+  color: #444;
+  white-space: pre-line;  /* 讓你換行有用（可留可不留） */
+}
+
+/* RWD：平板 2 欄 */
+@media (max-width: 980px) {
+  .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .team-photo { height: 170px; }
+}
+
+/* RWD：手機 1 欄 */
+@media (max-width: 560px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+  .team-card { padding: 14px; }
+  .team-photo { height: 180px; }
+}
+
