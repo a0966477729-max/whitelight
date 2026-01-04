@@ -76,7 +76,7 @@ const PRODUCTS = [
     image:[
       "images/coolmon1.jpg",
     ] ,
-    description:"一般款與壓花款差別在於" },
+    description:"壓花款比較扎實~" },
 
   { id:"P006", 
     name:"日常生活用品", 
@@ -161,7 +161,7 @@ const PRODUCTS = [
   { id:"P011", 
     name:"紙鈔", 
     category:"財寶箱", 
-    price:100, 
+    price:300, 
     variants:["財寶箱"], 
     image:[
       "images/box.jpg",
