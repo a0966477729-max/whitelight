@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>白光選品｜購物車</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="navbar">
+      <a class="brand" href="index.html" aria-label="回到首頁">
+        <div class="logo">
+          <img src="images/logo.jpg" >
+        </div>
+        <div class="site-name">白光選品</div>
+      </a>
+      <nav class="navlinks" aria-label="主選單">
+        <a href="index.html#categories">商品分類</a>
+        <a href="guide.html">購買須知</a>
+        <a href="about.html">關於我們</a>
+        <a href="cart.html" aria-label="購物車">
+          購物車<span class="badge" data-cart-badge style="display:none">0</span>
+        </a>
+        <a href="login.html" data-login-link>登入</a>
+        <a href="account.html" data-account-link style="display:none">我的帳號</a>
+        <button class="btn ghost" type="button" data-logout-btn style="display:none">登出</button>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <h2 style="margin:0 0 10px">購物車</h2>
+    <div class="two-col">
+      <section class="panel">
+        <table class="table" aria-label="購物車清單">
+          <thead>
+            <tr>
+              <th>商品</th>
+              <th>規格/客製化</th>
+              <th class="right-align">單價</th>
+              <th class="right-align">數量</th>
+              <th class="right-align">小計</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="cartBody"></tbody>
+        </table>
+        <div id="emptyBox" class="notice" style="display:none; margin-top:10px">
+          目前購物車是空的。你可以先回到首頁挑選商品。
+        </div>
+        <div class="row" style="margin-top:12px">
+          <a class="btn" href="index.html">繼續購物</a>
+          <a class="btn primary" id="toCheckout" href="checkout.html">前往結帳</a>
+        </div>
+      </section>
+
+      <aside class="panel" aria-label="金額計算">
+        <h3 style="margin:0 0 8px">金額計算</h3>
+        <div class="row" style="justify-content:space-between">
+          <div class="muted">小計</div><div id="subtotal">NT$ 0</div>
+        </div>
+        <div class="row" style="justify-content:space-between; margin-top:8px">
+          <div class="muted">運費（展示）</div><div id="shipping">NT$ 0</div>
+        </div>
+        <div style="border-top:1px solid var(--line); margin:10px 0"></div>
+        <div class="row" style="justify-content:space-between; font-weight:900">
+          <div>合計</div><div id="total">NT$ 0</div>
+        </div>
+
+        <div class="notice" style="margin-top:12px">
+          登入後可在「我的帳號」查看歷史訂單與基本資料。
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div>© 白光選品｜用一份心意，好好說再見。</div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/cart.js"></script>
+</body>
+</html>
